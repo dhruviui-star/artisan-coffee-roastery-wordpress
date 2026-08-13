@@ -326,3 +326,196 @@ a {
 
     font-size: 13px;
 }
+
+/* =========================================
+   Responsive Navigation
+========================================= */
+
+.mobile-menu-toggle {
+    display: none;
+
+    width: 44px;
+    height: 44px;
+
+    padding: 8px;
+
+    border: 0;
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.mobile-menu-toggle span:not(.screen-reader-text) {
+    display: block;
+
+    width: 100%;
+    height: 2px;
+
+    margin: 5px 0;
+
+    background: #241a14;
+}
+
+
+/* =========================================
+   Tablet
+========================================= */
+
+@media (max-width: 900px) {
+
+    .site-navigation ul {
+        gap: 18px;
+    }
+
+    .hero__content {
+        max-width: 600px;
+    }
+
+    .coffee-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================
+   Mobile
+========================================= */
+
+@media (max-width: 700px) {
+
+    .site-header__inner {
+        min-height: 70px;
+
+        position: relative;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .site-navigation {
+        display: none;
+
+        position: absolute;
+
+        top: 70px;
+        left: 0;
+        right: 0;
+
+        padding: 20px;
+
+        background: #f8f5ef;
+
+        border-top: 1px solid #ddd5ca;
+        border-bottom: 1px solid #ddd5ca;
+
+        z-index: 100;
+    }
+
+    .site-navigation.is-open {
+        display: block;
+    }
+
+    .site-navigation ul {
+        display: flex;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 0;
+    }
+
+    .site-navigation li {
+        border-bottom: 1px solid #ddd5ca;
+    }
+
+    .site-navigation li:last-child {
+        border-bottom: 0;
+    }
+
+    .site-navigation a {
+        display: block;
+
+        padding: 15px 5px;
+
+        font-size: 16px;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        min-height: 650px;
+    }
+
+    .hero__content {
+        padding: 70px 0;
+    }
+
+    .hero__title {
+        font-size: clamp(44px, 13vw, 64px);
+    }
+
+    .hero__description {
+        font-size: 16px;
+    }
+
+    .hero__actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .button {
+        width: 100%;
+        text-align: center;
+    }
+
+
+    /* Featured Coffee */
+
+    .featured-coffee {
+        padding: 70px 0;
+    }
+
+    .featured-coffee h2 {
+        font-size: 36px;
+    }
+
+    .coffee-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .coffee-card img {
+        height: 280px;
+    }
+
+
+    /* Roast Explorer */
+
+    .roast-explorer {
+        padding: 75px 0;
+    }
+
+    .roast-explorer h2 {
+        font-size: 42px;
+    }
+
+    .roast-selector__content {
+        margin-top: 50px;
+    }
+
+    .roast-profile h3 {
+        font-size: 40px;
+    }
+
+    .roast-profile p {
+        font-size: 16px;
+    }
+
+    .roast-notes {
+        gap: 8px;
+    }
+
+}

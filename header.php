@@ -37,12 +37,28 @@
 
         </div>
 
+        <!-- Mobile menu button -->
+        <button
+            class="mobile-menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <span class="screen-reader-text">
+                <?php esc_html_e( 'Open menu', 'artisan-coffee' ); ?>
+            </span>
+        </button>
+
         <!-- Navigation -->
         <nav
+            id="primary-navigation"
             class="site-navigation"
             aria-label="<?php esc_attr_e( 'Primary Navigation', 'artisan-coffee' ); ?>"
         >
-
             <?php
             wp_nav_menu(
                 array(
@@ -52,7 +68,6 @@
                 )
             );
             ?>
-
         </nav>
 
     </div>
