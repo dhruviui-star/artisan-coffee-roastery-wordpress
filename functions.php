@@ -37,11 +37,19 @@ function artisan_coffee_assets() {
     );
 
     wp_enqueue_script(
-    'artisan-coffee-mobile-menu',
-    get_template_directory_uri() . '/assets/js/mobile-menu.js',
-    array(),
-    '1.0.0',
-    true
+        'artisan-coffee-mobile-menu',
+        get_template_directory_uri() . '/assets/js/mobile-menu.js',
+        array(),
+        '1.0.0',
+        true
+    );
+
+    wp_enqueue_script(
+        'artisan-coffee-brewing-simulator',
+        get_template_directory_uri() . '/assets/js/brewing-simulator.js',
+        array(),
+        '1.0.0',
+        true
 );
 }
 

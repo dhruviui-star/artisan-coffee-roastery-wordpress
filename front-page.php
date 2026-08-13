@@ -122,6 +122,7 @@ get_header();
             </p>
 
         </div>
+        
 
         <div class="roast-selector">
 
@@ -202,6 +203,307 @@ get_header();
                         <span>Bold</span>
                     </div>
                 </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="brewing-simulator" id="brewing-simulator">
+
+    <div class="container">
+
+        <div class="brewing-simulator__intro">
+
+            <p class="section-eyebrow">BREW YOUR PERFECT CUP</p>
+
+            <h2>Build your brew.</h2>
+
+            <p>
+                Choose your coffee, brewing method and strength.
+                We'll create a simple recipe for you.
+            </p>
+
+        </div>
+
+        <div class="brewing-simulator__layout">
+
+            <!-- Controls -->
+
+            <div class="brewing-controls">
+
+                <div class="brew-control">
+
+                    <label for="coffee-choice">
+                        Coffee
+                    </label>
+
+                    <select id="coffee-choice">
+
+                        <option value="ethiopian">
+                            Ethiopian Sunrise
+                        </option>
+
+                        <option value="colombian">
+                            Colombian Reserve
+                        </option>
+
+                        <option value="brazilian">
+                            Brazilian Dark Roast
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="brew-control">
+
+                    <label>
+                        Brew Method
+                    </label>
+
+                    <div class="brew-methods">
+
+                        <button
+                            type="button"
+                            class="brew-method active"
+                            data-method="pour-over"
+                        >
+                            Pour Over
+                        </button>
+
+                        <button
+                            type="button"
+                            class="brew-method"
+                            data-method="french-press"
+                        >
+                            French Press
+                        </button>
+
+                        <button
+                            type="button"
+                            class="brew-method"
+                            data-method="espresso"
+                        >
+                            Espresso
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="brew-control">
+
+                    <label for="strength">
+                        Strength
+                    </label>
+
+                    <input
+                        type="range"
+                        id="strength"
+                        min="1"
+                        max="3"
+                        value="2"
+                        step="1"
+                    >
+
+                    <div class="strength-labels">
+                        <span>Light</span>
+                        <span>Balanced</span>
+                        <span>Strong</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Recipe -->
+
+            <div class="brew-recipe">
+
+                <p class="brew-recipe__eyebrow">
+                    YOUR BREW RECIPE
+                </p>
+
+                <h3 id="recipe-coffee">
+                    Ethiopian Sunrise
+                </h3>
+
+                <div class="recipe-details">
+
+                    <div class="recipe-detail">
+
+                        <span>Method</span>
+
+                        <strong id="recipe-method">
+                            Pour Over
+                        </strong>
+
+                    </div>
+
+                    <div class="recipe-detail">
+
+                        <span>Coffee</span>
+
+                        <strong id="recipe-coffee-grams">
+                            20 g
+                        </strong>
+
+                    </div>
+
+                    <div class="recipe-detail">
+
+                        <span>Water</span>
+
+                        <strong id="recipe-water">
+                            300 ml
+                        </strong>
+
+                    </div>
+
+                    <div class="recipe-detail">
+
+                        <span>Temperature</span>
+
+                        <strong id="recipe-temperature">
+                            94°C
+                        </strong>
+
+                    </div>
+
+                    <div class="recipe-detail">
+
+                        <span>Time</span>
+
+                        <strong id="recipe-time">
+                            3:00
+                        </strong>
+
+                    </div>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="button button--primary brew-start"
+                    id="start-brew"
+                >
+                    Start Brewing
+                </button>
+
+                <div
+                    class="brew-message"
+                    id="brew-message"
+                    aria-live="polite"
+                ></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="our-story" id="our-story">
+
+    <div class="container">
+
+        <div class="our-story__grid">
+
+            <div class="our-story__image">
+
+                <div class="story-image-placeholder">
+                    <span>ARTISAN COFFEE</span>
+                </div>
+
+            </div>
+
+
+            <div class="our-story__content">
+
+                <p class="section-eyebrow">
+                    OUR STORY
+                </p>
+
+                <h2>
+                    From farm to cup,
+                    with intention.
+                </h2>
+
+                <p>
+                    We believe great coffee begins with great
+                    relationships. We work closely with farmers,
+                    carefully select every bean, and roast in
+                    small batches to bring out the character
+                    of every origin.
+                </p>
+
+                <p>
+                    What started as a small passion for better
+                    coffee has grown into a community built
+                    around curiosity, craftsmanship and the
+                    simple pleasure of a great cup.
+                </p>
+
+                <a
+                    href="<?php echo esc_url( home_url( '/our-story/' ) ); ?>"
+                    class="button button--dark"
+                >
+                    Discover Our Story
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="story-timeline">
+
+            <div class="story-milestone">
+
+                <span>2018</span>
+
+                <h3>The Beginning</h3>
+
+                <p>
+                    A small roasting experiment
+                    becomes a passion.
+                </p>
+
+            </div>
+
+
+            <div class="story-milestone">
+
+                <span>2021</span>
+
+                <h3>First Roastery</h3>
+
+                <p>
+                    We open our first dedicated
+                    roasting space.
+                </p>
+
+            </div>
+
+
+            <div class="story-milestone">
+
+                <span>2024</span>
+
+                <h3>A Growing Community</h3>
+
+                <p>
+                    Coffee lovers from around the
+                    world join our journey.
+                </p>
 
             </div>
 
