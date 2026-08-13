@@ -27,6 +27,14 @@ function artisan_coffee_assets() {
         array(),
         '1.0.0'
     );
+
+    wp_enqueue_script(
+        'artisan-coffee-roast-selector',
+        get_template_directory_uri() . '/assets/js/roast-selector.js',
+        array(),
+        '1.0.0',
+        true
+    );
 }
 
 add_action( 'wp_enqueue_scripts', 'artisan_coffee_assets' );
