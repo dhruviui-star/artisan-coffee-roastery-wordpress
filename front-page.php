@@ -513,6 +513,151 @@ get_header();
 
 </section>
 
+<section class="coffee-journal" id="journal">
+
+    <div class="container">
+
+        <div class="coffee-journal__header">
+
+            <div>
+
+                <p class="section-eyebrow">
+                    FROM THE JOURNAL
+                </p>
+
+                <h2>
+                    Coffee, culture & craft.
+                </h2>
+
+            </div>
+
+            <a
+                href="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ); ?>"
+                class="button button--dark"
+            >
+                View All Articles
+            </a>
+
+        </div>
+
+
+        <div class="journal-grid">
+
+            <?php
+
+            $journal_query = new WP_Query(
+                array(
+                    'post_type'      => 'post',
+                    'posts_per_page' => 3,
+                    'post_status'    => 'publish',
+                )
+            );
+
+            if ( $journal_query->have_posts() ) :
+
+                while ( $journal_query->have_posts() ) :
+
+                    $journal_query->the_post();
+
+                    ?>
+
+                    <article class="journal-card">
+
+                        <?php if ( has_post_thumbnail() ) : ?>
+
+                            <a href="<?php the_permalink(); ?>">
+
+                                <?php the_post_thumbnail( 'large' ); ?>
+
+                            </a>
+
+                        <?php else : ?>
+
+                            <a
+                                href="<?php the_permalink(); ?>"
+                                class="journal-card__placeholder"
+                            >
+                                <span>ARTISAN COFFEE</span>
+                            </a>
+
+                        <?php endif; ?>
+
+
+                        <div class="journal-card__content">
+
+                            <div class="journal-card__meta">
+
+                                <span>
+                                    <?php echo esc_html( get_the_date() ); ?>
+                                </span>
+
+                                <?php
+                                $categories = get_the_category();
+
+                                if ( ! empty( $categories ) ) :
+                                    ?>
+
+                                    <span>
+                                        <?php echo esc_html( $categories[0]->name ); ?>
+                                    </span>
+
+                                <?php endif; ?>
+
+                            </div>
+
+
+                            <h3>
+
+                                <a href="<?php the_permalink(); ?>">
+
+                                    <?php the_title(); ?>
+
+                                </a>
+
+                            </h3>
+
+
+                            <p>
+
+                                <?php
+                                echo esc_html(
+                                    wp_trim_words(
+                                        get_the_excerpt(),
+                                        20
+                                    )
+                                );
+                                ?>
+
+                            </p>
+
+
+                            <a
+                                href="<?php the_permalink(); ?>"
+                                class="journal-card__link"
+                            >
+                                Read Article →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                    <?php
+
+                endwhile;
+
+                wp_reset_postdata();
+
+            endif;
+
+            ?>
+
+        </div>
+
+    </div>
+
+</section>
+
 </main>
 
 
